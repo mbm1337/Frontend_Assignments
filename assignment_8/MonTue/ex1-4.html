@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="outer">
+            <div id="div1" class="mydiv" >
+                div1
+            </div>
+
+            <br>
+
+            <div id="div2" class="mydiv">
+                div2
+            </div>
+
+            <br>
+
+            <div id="div3" class="mydiv">
+                div3
+            </div>
+        
+            <br>
+
+            <div id="div4" class="mydiv">
+                div4
+            </div>
+            <br>
+
+            <div id="div5" class="mydiv">
+                div5
+            </div>
+            <br>
+
+            <div id="div6" class="mydiv">
+                div6
+            </div>
+            <br>
+
+            <div id="div7" class="mydiv">
+                div7
+            </div>
+            <br>
+
+            <div id="div8" class="mydiv">
+                div8
+            </div>
+            <br>
+
+            <div id="div9" class="mydiv">
+                div9
+            </div>
+            <br>
+
+            <div id="div10" class="mydiv">
+                div10
+            </div>
+            <br>
+
+            <div id="div11" class="mydiv">
+                div11
+            </div>
+            <br>
+
+            <div id="div12" class="mydiv">
+                div12
+            </div>
+            <br>
+        </div>
+        
+        <p id="output"></p>
+
+    </body>
+</html>
+
+<script>
+ document.getElementById('outer').addEventListener('click', function(event) {
+    document.getElementById('output').innerText = 'Hi from ' + event.target.id;
+    });
+
+</script>
+
+<style>
+    .mydiv { 
+  width: 25px; height: 25px;
+  background-color: yellow; margin: 1px; 
+}
+</style>
+

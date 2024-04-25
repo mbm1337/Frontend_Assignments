@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <div id="container">
+        <div id="display" class="t4"></div>
+        <div id="buttons">
+          <div class="t1">7</div>
+          <div class="t1">8</div>
+          <div class="t1">9</div>
+          <div class="t1">/</div>
+    
+          <div class="t1">4</div>
+          <div class="t1">5</div>
+          <div class="t1">6</div>
+          <div class="t1">*</div>
+    
+          <div class="t1">1</div>
+          <div class="t1">2</div>
+          <div class="t1">3</div>
+          <div class="t1">-</div>
+    
+          <div class="t1">0</div>
+          <div class="t1">.</div>
+          <div class="t1">+</div>
+          <div id="calculate" class="t1">=</div>
+      </div>
+    </div>
+
+</html>
+
+<script>
+    let display = document.getElementById("display");
+    let buttons = document.getElementById("buttons");
+    let calculate = document.getElementById("calculate");
+    let result = 0;
+    let operator = "";
+    let firstNumber = 0;
+    let secondNumber = 0;
+
+    buttons.addEventListener("click", function(event) {
+        if(event.target.innerHTML === "=") {
+            secondNumber = parseFloat(display.innerHTML.split(operator)[1]);
+            switch(operator) {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    result = firstNumber / secondNumber;
+                    break;
+            }
+            display.innerHTML = result;
+            firstNumber = result;
+            secondNumber = 0;
+            operator = "";
+        } else if(event.target.innerHTML === "+" || event.target.innerHTML === "-" || event.target.innerHTML === "*" || event.target.innerHTML === "/") {
+            operator = event.target.innerHTML;
+            firstNumber = parseFloat(display.innerHTML);
+            display.innerHTML = firstNumber + operator;
+        } else {
+            display.innerHTML += event.target.innerHTML;
+        }
+    });
+
+</script>
+
+<style>
+    #container {
+    width: 226px;
+    height: 274px;
+    border: 3px solid darkblue;
+    margin: auto
+}
+.t1, .t4 {
+    border: 1px solid black;
+    height: 48px;
+    margin-left: 3px;
+    margin-top: 3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+}
+.t1 {
+    width: 48px;
+}
+.t4 {
+    width: 219px;
+}
+
+</style>

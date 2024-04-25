@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <form>
+
+        <ul id="names"></ul>
+        
+        <input type="text" name="inputField">
+        <button id="add" type="submit">Submit</button>
+        <br>
+        <button id="remFirst" type="button">Remove first</button>
+        <br>
+        <button id="remLast" type="button">Remove last</button>
+
+    </form>
+</html>
+
+<script>
+        
+const names = ["Lars", "Jan", "Peter", "Bo", "Frederik"];
+const htmlNames = names.map(name => `<li>${name}</li>`).join("");
+document.getElementById("names").innerHTML = htmlNames;
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const inputField = document.querySelector("input[name=inputField]");
+    names.push(inputField.value);
+    const htmlNames = names.map(name => `<li>${name}</li>`).join("");
+    document.getElementById("names").innerHTML = htmlNames;
+    inputField.value = "";
+});
+
+document.getElementById("remFirst").addEventListener("click", function() {
+    names.shift()
+    const htmlNames = names.map(name => `<li>${name}</li>`).join("");
+    document.getElementById("names").innerHTML = htmlNames;
+});
+
+document.getElementById("remLast").addEventListener("click", function() {
+    names.pop()
+    const htmlNames = names.map(name => `<li>${name}</li>`).join("");
+    document.getElementById("names").innerHTML = htmlNames;
+});
+
+
+</script>
