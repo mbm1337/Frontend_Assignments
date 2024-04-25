@@ -1,1 +1,1 @@
-#Frontend assignments by Morten Bomholt Mikkelsen#
+Frontend assignments by Morten Bomholt Mikkelsen
