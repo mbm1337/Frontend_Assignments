@@ -1,6 +1,6 @@
 1. week assignments 
 
-by Morten Bomholt Mikkelsen
+    by Morten Bomholt Mikkelsen
 
 - Includes:
 * https://github.com/dat3Cph/material/blob/sem2024spring/flowFrontend/week1-getting-started/JSExercise0.md
